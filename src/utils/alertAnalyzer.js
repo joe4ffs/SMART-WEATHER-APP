@@ -14,7 +14,7 @@ export const analyzeAlerts = (weatherData) => {
   hourly.forEach(h => {
     const time    = `${String(parseInt(h.time)/100).padStart(2,"0")}:00`;
     const rain    = parseInt(h.chanceofrain    || 0);
-    const snow    = parseInt(h.chanceofssnow   || 0);
+    const snow    = parseInt(h.chanceofsnow    || 0);
     const wind    = parseInt(h.windspeedKmph   || 0);
     const thunder = parseInt(h.chanceofthunder || 0);
     const fog     = parseInt(h.chanceoffog     || 0);

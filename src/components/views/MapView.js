@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import styles from "../../styles/theme";
 
 /*
@@ -129,13 +129,13 @@ function MapView({ latitude, longitude, city, accent }) {
               { label:"Longitude", val:`${lng.toFixed(4)}°` },
               { label:"Layer",     val: activeObj?.label ?? "—" },
             ].map(({ label, val }, i, arr) => (
-              <>
-                <div key={label}>
+              <Fragment key={label}>
+                <div>
                   <div style={{ fontSize:11, opacity:0.4, textTransform:"uppercase", letterSpacing:"0.05em", marginBottom:4 }}>{label}</div>
                   <div style={{ fontFamily:"'Syne',sans-serif", fontSize:15, fontWeight:700 }}>{val}</div>
                 </div>
-                {i < arr.length-1 && <div key={`sep${i}`} style={{ width:1, background:"rgba(255,255,255,0.08)" }}/>}
-              </>
+                {i < arr.length-1 && <div style={{ width:1, background:"rgba(255,255,255,0.08)" }}/>}
+              </Fragment>
             ))}
           </div>
         </div>

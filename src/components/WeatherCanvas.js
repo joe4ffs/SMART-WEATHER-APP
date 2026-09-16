@@ -8,6 +8,7 @@ function WeatherCanvas({ type, accent }) {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx    = canvas.getContext("2d");
+    if (!ctx) return;
     let animId;
 
     const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
